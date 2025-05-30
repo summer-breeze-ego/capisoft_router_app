@@ -7,9 +7,8 @@ import Dashboard from './pages/Dashboard';
 import Users from './pages/Users';
 import NoPage from './pages/NoPage';
 import PrivateRoute from './components/PrivateRoute';
-import ChangePage from './components/Rerouter';
+import GoToDashboard from './components/GoToDashboard.tsx';
 
- 
 
 function App() {
 
@@ -17,33 +16,38 @@ function App() {
     <>
       <div>
         <HashRouter>
-          <Routes>
+            <Routes>
 
-            {/* public */}
-            <Route path='/login' index element = {<Login />} /> 
-            
-            {/* private */}
-            <Route 
-              path='/dashboard' 
-              element = {
-                <PrivateRoute>
-                  <Dashboard />
-                </PrivateRoute>
-              } 
-            />
-            <Route 
-              path='/users' 
-              element = {
-                <PrivateRoute>
-                  <Users />
-                </PrivateRoute>
-              } 
-            /> 
+              {/* public */}
+              <Route 
+                path='/login' 
+                index element = {
+                  <GoToDashboard>
+                    <Login />
+                  </GoToDashboard>
+                } /> 
+              
+              {/* private */}
+              <Route 
+                path='/dashboard' 
+                element = {
+                  <PrivateRoute>
+                    <Dashboard />
+                  </PrivateRoute>
+                } 
+              />
+              <Route 
+                path='/users' 
+                element = {
+                  <PrivateRoute>
+                    <Users />
+                  </PrivateRoute>
+                } 
+              />
 
-
-            <Route path='*' element = {< NoPage />} />
-            
-          </Routes>
+              <Route path='*' element = {< NoPage />} />
+              
+            </Routes>
         </HashRouter>
       </div>
       

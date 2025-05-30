@@ -1,17 +1,15 @@
 import { useState } from "react"
-import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import { usePage } from "../context/PageContext";
 
 export default function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const { setAuthenticated } = useAuth(); // use context
     const [error, setError] = useState('')
-    const { setPage } = usePage()
+    const { setAuthenticated } = useAuth(); // use context
 
-    const navigate = useNavigate()
-
+    // constant/function to check validity of email and password
+    // change authentification and update current page
+    // when sign up button is pressed
     const handleSignUp = () => {
         // validation
         if (email.length < 3) {
@@ -28,8 +26,7 @@ export default function Login() {
         // clear error to proceed
         setError('')
         setAuthenticated(true); // global value thanks to context
-        console.log("Authenticated:", true);
-        navigate("../dashboard")
+        console.log("Authenticated:", true);        
 
     }
 
