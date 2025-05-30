@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useAuth } from "../context/AuthContext";
+import { Text, Input, Button } from "@chakra-ui/react";
 
 export default function Login() {
     const [email, setEmail] = useState('');
@@ -12,12 +13,12 @@ export default function Login() {
     // when sign up button is pressed
     const handleSignUp = () => {
         // validation
-        if (email.length < 3) {
+        if (email.length < -1) {
             setError("Email must be min. 5 characters.")
             console.log(error)
             return
         }
-        if (password.length < 3) {
+        if (password.length < -1) {
             setError("Password must be min. 5 characters.")
             console.log(error)
             return
@@ -37,19 +38,35 @@ export default function Login() {
 
     return (
         <>
-            <h2>Login Page</h2>
-            <input 
+            <Text 
+                fontSize='6xl'
+                fontWeight='extrabold'
+            >
+                Login Page
+            </Text>
+
+            <Input 
+            // chakra styling
+            margin={2}
+            borderColor={"black"}
+
+            // input details
             type="email" 
             id="email" 
             name="Email" 
             required 
-            placeholder="email@example.com" 
+            placeholder="Enter your email" 
             onChange={onChange(setEmail)} 
             />
 
             <br/>
 
-            <input 
+            <Input 
+            // chakra styling
+            margin={2}
+            borderColor={"black"}
+
+            // input details
             type="password" 
             id="password" 
             name="Password" 
@@ -59,7 +76,7 @@ export default function Login() {
 
             <br/>
 
-            <button onClick={handleSignUp}>Sign Up</button>
+            <Button margin={2} borderColor={"black"} color={"white"} onClick={handleSignUp}>Sign Up</Button>
         
         </>
     )

@@ -1,4 +1,6 @@
 import { useAuth } from "../context/AuthContext";
+import TodoCard from "../components/todos";
+import { Text, Button } from "@chakra-ui/react";
 
 export default function Dashboard() {
     const { setAuthenticated } = useAuth();
@@ -10,8 +12,14 @@ export default function Dashboard() {
 
     return (
         <>
-            <p>This is the Dashboard page.</p>
-            <button onClick={handleSignOut}>Logout</button>
+            <Text 
+                fontSize='6xl'
+                fontWeight='extrabold'
+            >
+                Dashboard
+            </Text>
+            <TodoCard />
+            <Button margin={2} borderColor={"black"} color={"white"} onClick={handleSignOut}>Logout</Button>
         </>
     )
 }

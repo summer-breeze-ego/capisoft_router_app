@@ -21,7 +21,7 @@ function App() {
               {/* public */}
               <Route 
                 path='/login' 
-                index element = {
+                element = {
                   <GoToDashboard>
                     <Login />
                   </GoToDashboard>
