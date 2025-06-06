@@ -8,6 +8,7 @@ import Users from './pages/Users';
 import NoPage from './pages/NoPage';
 import PrivateRoute from './components/PrivateRoute';
 import GoToDashboard from './components/GoToDashboard.tsx';
+import Reviews from './pages/Reviews.tsx'
 
 
 function App() {
@@ -36,6 +37,14 @@ function App() {
                   </PrivateRoute>
                 } 
               />
+
+              <Route
+                path='/reviews'
+                element = {
+                  <Reviews />
+                }
+              />
+
               <Route 
                 path='/users' 
                 element = {

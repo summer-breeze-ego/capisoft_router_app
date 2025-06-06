@@ -41,14 +41,16 @@ export default function Login() {
             <Text 
                 fontSize='6xl'
                 fontWeight='extrabold'
+
             >
                 Login Page
             </Text>
 
-            <Input 
-            // chakra styling
+            <Input
+            // styling
             margin={2}
-            borderColor={"black"}
+            backgroundColor={'white'}
+            padding={5}
 
             // input details
             type="email" 
@@ -64,7 +66,8 @@ export default function Login() {
             <Input 
             // chakra styling
             margin={2}
-            borderColor={"black"}
+            backgroundColor={'white'}
+            padding={5}
 
             // input details
             type="password" 
@@ -76,7 +79,14 @@ export default function Login() {
 
             <br/>
 
-            <Button margin={2} borderColor={"black"} color={"white"} onClick={handleSignUp}>Sign Up</Button>
+            <Button 
+            margin={2} 
+            borderColor={"black"} 
+            color={"white"} 
+            onClick={handleSignUp}
+            >
+                Sign Up
+            </Button>
         
         </>
     )

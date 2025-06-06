@@ -4,8 +4,8 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: rgba(36, 31, 31, 0.87);
+  background-color: #F6F6F8;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -24,8 +24,8 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  display: fixed; /* changed from flex so page doesnt only stay in center */
+  /* place-items: center; */ /* changed this to position elements in full width of page (dashboard top and contents for example */
   min-width: 320px;
   min-height: 100vh;
 }

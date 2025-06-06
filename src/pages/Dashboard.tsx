@@ -1,25 +1,37 @@
-import { useAuth } from "../context/AuthContext";
-import TodoCard from "../components/todos";
-import { Text, Button } from "@chakra-ui/react";
+import TodoCard from "../components/todos.tsx";
+import { Flex } from "@chakra-ui/react";
+import SiderbarLeft from "../components/Sidebar";
+import TopDashboard from "./dashboard-content/TopDashboard.tsx";
+import ContentDashboard from "./dashboard-content/ContentDashboard.tsx";
+import DateDashboard from "./dashboard-content/DateDashboard.tsx";
 
 export default function Dashboard() {
-    const { setAuthenticated } = useAuth();
-
-    const handleSignOut = () => {
-        setAuthenticated(false);
-        console.log("Authenticated:", false)
-    }
 
     return (
-        <>
-            <Text 
-                fontSize='6xl'
-                fontWeight='extrabold'
+        <Flex display = "flex" alignItems="flex-start">
+            <SiderbarLeft/>
+            
+            <Flex flexDirection={'column'}
+            gap='10' 
+            top={'0'} left={'0'} 
+            h={'100%'} w={'100%'}
+            display={'flex'} 
+            wrap={'wrap'}
+            ml={'5%'}
             >
-                Dashboard
-            </Text>
-            <TodoCard />
-            <Button margin={2} borderColor={"black"} color={"white"} onClick={handleSignOut}>Logout</Button>
-        </>
+                <TopDashboard />
+
+                <Flex flexDirection={'column'}>
+
+                    <DateDashboard />
+
+                    <ContentDashboard />
+
+                </Flex>
+
+            </Flex>
+
+            {/* <TodoCard /> */}
+        </Flex>
     )
 }
