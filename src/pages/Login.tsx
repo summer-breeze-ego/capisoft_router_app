@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useAuth } from "../context/AuthContext";
-import { Text, Input, Button } from "@chakra-ui/react";
+import { Text, Input, Button, Flex } from "@chakra-ui/react";
 
 export default function Login() {
     const [email, setEmail] = useState('');
@@ -27,67 +27,72 @@ export default function Login() {
         // clear error to proceed
         setError('')
         setAuthenticated(true); // global value thanks to context
-        console.log("Authenticated:", true);        
+        console.log("Authenticated:", true);
 
     }
 
     // const to get the value from the email or password text input box
-    const onChange =  (setter: React.Dispatch<React.SetStateAction<string>>) => (e: React.ChangeEvent<HTMLInputElement>): void => {
+    const onChange = (setter: React.Dispatch<React.SetStateAction<string>>) => (e: React.ChangeEvent<HTMLInputElement>): void => {
         setter(e.target.value);
     }
 
     return (
-        <>
-            <Text 
+        <Flex flexDirection={'column'} align={'center'}>
+            <Text
                 fontSize='6xl'
                 fontWeight='extrabold'
-
             >
                 Login Page
             </Text>
 
-            <Input
-            // styling
-            margin={2}
-            backgroundColor={'white'}
-            padding={5}
+            <Flex flexDirection={'column'} gap={0}>
+                <Input
+                    // styling
+                    mt={2}
+                    backgroundColor={'white'}
+                    padding={5}
+                    maxWidth={'350px'}
+                    borderColor={'white'}
 
-            // input details
-            type="email" 
-            id="email" 
-            name="Email" 
-            required 
-            placeholder="Enter your email" 
-            onChange={onChange(setEmail)} 
-            />
+                    // input details
+                    type="email"
+                    id="email"
+                    name="Email"
+                    required
+                    placeholder="Enter your email"
+                    onChange={onChange(setEmail)}
+                />
 
-            <br/>
+                <br />
 
-            <Input 
-            // chakra styling
-            margin={2}
-            backgroundColor={'white'}
-            padding={5}
+                <Input
+                    // chakra styling
+                    backgroundColor={'white'}
+                    padding={5}
+                    maxWidth={'350px'}
+                    borderColor={'white'}
+                    placeholder="Password"
 
-            // input details
-            type="password" 
-            id="password" 
-            name="Password" 
-            required 
-            onChange={onChange(setPassword)} 
-            />
+                    // input details
+                    type="password"
+                    id="password"
+                    name="Password"
+                    required
+                    onChange={onChange(setPassword)}
+                />
 
-            <br/>
+                <br />
 
-            <Button 
-            margin={2} 
-            borderColor={"black"} 
-            color={"white"} 
-            onClick={handleSignUp}
-            >
-                Sign Up
-            </Button>
-        
-        </>
+                <Button
+                    borderColor={"black"}
+                    color={"white"}
+                    ml={'10'}
+                    mr={'10'}
+                    onClick={handleSignUp}
+                >
+                    Sign Up
+                </Button>
+            </Flex>
+        </Flex>
     )
 }

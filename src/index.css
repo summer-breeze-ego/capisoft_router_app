@@ -24,7 +24,7 @@ a:hover {
 
 body {
   margin: 0;
-  display: fixed; /* changed from flex so page doesnt only stay in center */
+  display: fixed; /* changed from flex to fixed so page doesnt only stay in center */
   /* place-items: center; */ /* changed this to position elements in full width of page (dashboard top and contents for example */
   min-width: 320px;
   min-height: 100vh;

@@ -1,55 +1,44 @@
-import { Box, SimpleGrid, Flex } from "@chakra-ui/react"
+import { Box, SimpleGrid, GridItem } from "@chakra-ui/react"
 
-export default function ContentDashboard () {
+{/* import components of dashboard content */ }
+import NrTakedowns from "./NrTakedownsDashboard";
+import PGScraped from "./PGSDashboard";
+import NewNotis from "./NewNotiDashboard"
+import Analytics from "./AnalDashboard"
+import FakeSellers from "./FakeSellDashboard";
+import NotiTakeDowns from "./NotiTakeDownsDashboard";
+import TopAdmin from "./TopAdminDashboard";
+
+export default function ContentDashboard() {
     return (
         <>
             <Box w='100%' mt={'10px'}>
-                    <SimpleGrid minChildWidth='200px' gap='10px'>
-                        <Box 
-                        padding='20px'
-                        backgroundColor='white'
-                        borderRadius={'10px'}
-                        >
-                            This is box 1
-                        </Box>
-                        <Box 
-                        padding='20px'
-                        backgroundColor='white'
-                        borderRadius={'10px'}
-                        >
-                            This is box 2
-                        </Box>
-                        <Box 
-                        padding='20px'
-                        backgroundColor='white'
-                        borderRadius={'10px'}
-                        >
-                            This is box 3
-                        </Box>
-                        <Box 
-                        padding='20px'
-                        backgroundColor='white'
-                        borderRadius={'10px'}
-                        >
-                            This is box 4
-                        </Box>
-                        <Box 
-                        padding='20px'
-                        backgroundColor='white'
-                        borderRadius={'10px'}
-                        >
-                            This is box 5
-                        </Box>
-                        <Box 
-                        padding='20px'
-                        backgroundColor='white'
-                        borderRadius={'10px'}
-                        >
-                            This is box 6
-                        </Box>
-                    </SimpleGrid>
-               
-                </Box>
+                <SimpleGrid minChildWidth='300px' gap='5'>
+                    <GridItem padding='20px' backgroundColor='white' borderRadius={'20px'} >
+                        <NrTakedowns />
+                    </GridItem>
+                    <GridItem padding='20px' backgroundColor='white' borderRadius={'20px'} >
+                        <PGScraped />
+                    </GridItem>
+                    <GridItem padding='20px' backgroundColor='white' borderRadius={'20px'} >
+                        <NewNotis />
+                    </GridItem>
+                    <GridItem padding='20px' backgroundColor='white' borderRadius={'20px'} colSpan={2} h={'300px'} >
+                        <Analytics />
+                    </GridItem>
+                    <GridItem padding='20px' backgroundColor='white' borderRadius={'20px'}>
+                        <FakeSellers />
+                    </GridItem>
+                    <GridItem padding='20px' backgroundColor='white' borderRadius={'10px'} colSpan={2}>
+                        <NotiTakeDowns />
+                    </GridItem>
+                    <GridItem padding='20px' backgroundColor='white' borderRadius={'10px'} >
+                        <TopAdmin />
+                    </GridItem>
+                </SimpleGrid>
+
+
+            </Box>
         </>
     )
 }

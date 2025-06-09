@@ -9,21 +9,21 @@ export default function DateDashboard() {
     } as const;
 
     const formattedDate = new Intl.DateTimeFormat('en-US', options).format(new Date())
-    
+
     return (
         <Flex w='100%' padding={1} margin={3}>
             <Box textAlign={"left"} fontWeight={'bold'} paddingTop={'2'}>{formattedDate}</Box>
-            
+
             {/* container for filter buttons on the right of date */}
             <Flex ml={'auto'} gap={'3'}>
                 <Box textAlign={'center'} padding={2} color='gray' fontSize={'small'}>
-                    Choose Planet:
+                    Choose Platform:
                 </Box>
                 <Button bgColor={'white'}>
-                    Earth
+                    Alibaba
                 </Button>
                 <Button bgColor={'white'}>
-                    Mars
+                    Aliexpress
                 </Button>
                 <Button bgColor={'#6F6CF3'} color={'white'}>
                     All
