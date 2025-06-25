@@ -84,7 +84,7 @@ export default class AnalyticsBarChart extends PureComponent {
                 <BarChart data={data}>
                     <CartesianGrid strokeDasharray="3 3" vertical={false} />
                     <XAxis dataKey="name" />
-                    <YAxis yAxisId="left" orientation="left" stroke="gray" />
+                    <YAxis yAxisId="left" orientation="left" stroke="gray" domain={[0, 6000]} tickCount={7} />
 
                     <Bar yAxisId={'left'} dataKey={'lr'} fill={'#D7F0FC'} />
                     <Bar yAxisId={'left'} dataKey={'ns'} fill={'#CDEFD9'} />

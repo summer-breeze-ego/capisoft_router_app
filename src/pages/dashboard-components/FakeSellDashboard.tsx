@@ -68,7 +68,7 @@ export default function FakeSellers() {
                                 </Flex>
                                 <Flex
                                     ml='auto'
-                                    color={'gray'}
+                                    opacity={'60%'}
                                     alignItems={'center'}
                                     fontSize={12}
                                 >

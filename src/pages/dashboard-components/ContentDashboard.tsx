@@ -36,8 +36,6 @@ export default function ContentDashboard() {
                         <TopAdmin />
                     </GridItem>
                 </SimpleGrid>
-
-
             </Box>
         </>
     )

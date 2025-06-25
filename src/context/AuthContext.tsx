@@ -5,22 +5,31 @@ import type { ReactNode } from "react";
 interface AuthContextType {
     authenticated: boolean; // boolean property
     setAuthenticated: (auth: boolean) => void; // property that is a function that takes auth and returns nothing
+    navigationTarget: string | null; // global variable to state where to go
+    navigateTo: (path: string | null) => void; // function to set the navigation target
 }
 
 // use createContext to create a constant AuthContext of type either AuthContextType or undefined
 // which by default is underfined "(undefined)"
-const AuthContext = createContext<AuthContextType | undefined> (undefined);
+const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 // defines as React component
 // children means whatever React elements are inside it
-export function AuthProvider({ children } : { children: ReactNode }) {
-    
+export function AuthProvider({ children }: { children: ReactNode }) {
+
     // define authenticated variable and function to set its value (by default false) to use globally
     const [authenticated, setAuthenticated] = useState(false);
+    //add state for navigation target
+    const [navigationTarget, setNavigationTarget] = useState<string | null>(null);
+
+    //updating the targe
+    const navigateTo = (path: string | null) => {
+        setNavigationTarget(path);
+    }
 
     // what <AuthContext>...</AuthContext> renders
     return (
-        <AuthContext.Provider value={{ authenticated, setAuthenticated}}>
+        <AuthContext.Provider value={{ authenticated, setAuthenticated, navigationTarget, navigateTo, }}>
             {children} {/* any React element inside */}
         </AuthContext.Provider>
     );

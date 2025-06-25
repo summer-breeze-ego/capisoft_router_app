@@ -1,43 +1,19 @@
-import { Text, Button, Flex } from '@chakra-ui/react'
 import products from '../data/Products'
 import SiderbarLeft from '../components/Sidebar'
+import Header from '../components/Header'
+import ContentReviews from './reviews-components/ContentReviews'
+import { Flex } from '@chakra-ui/react'
 
 function Reviews() {
 
     return (
-        <Flex display={"flex"} alignItems={'flex-start'}>
-            <SiderbarLeft />
+        <Flex gap={3} flexDirection={'column'}>
+            <Header title_page='Reviews' />
+            <SiderbarLeft active_page='Reviews' />
 
-            <Flex flexDirection={'column'}>
-                <Text
-                    fontSize='3xl'
-                    fontWeight='extrabold'
-                >
-                    Reviews
-                </Text>
-                <Text
-                    fontSize='small'
-                    fontWeight='bold'
-                >
-                    Grid View
-                </Text>
-                <Button
-                    margin={2}
-                    backgroundColor={'white'}
-                    color={'black'}
-                >
-                    List View
-                </Button>
-                <Button
-                    margin={2}
-                    backgroundColor={'black'}
-                    color={'white'}
-                >
-                    Grid View
-                </Button>
-            </Flex>
+            {/* actual components */}
+            <ContentReviews />
         </Flex>
-
     )
 }
 

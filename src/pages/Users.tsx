@@ -1,17 +1,12 @@
-import { useAuth } from "../context/AuthContext"
+import Header from "../components/Header";
+import SiderbarLeft from "../components/Sidebar";
 
 export default function Users() {
-    const {setAuthenticated} = useAuth()
-
-    const handleSignOut = () => {
-        setAuthenticated(false);
-        console.log("Authenticated", false)
-    }
 
     return (
         <>
-            <p>This is the Users page.</p>
-            <button onClick={handleSignOut}>Logout</button>
+            <Header title_page="Users" />
+            <SiderbarLeft active_page="Users" />
         </>
     )
 }

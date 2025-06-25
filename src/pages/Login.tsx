@@ -6,7 +6,7 @@ export default function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('')
-    const { setAuthenticated } = useAuth(); // use context
+    const { setAuthenticated, navigateTo } = useAuth(); // use context
 
     // constant/function to check validity of email and password
     // change authentification and update current page
@@ -28,6 +28,7 @@ export default function Login() {
         setError('')
         setAuthenticated(true); // global value thanks to context
         console.log("Authenticated:", true);
+        navigateTo('/dashboard')
 
     }
 

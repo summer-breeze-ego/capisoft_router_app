@@ -1,15 +1,15 @@
 import TodoCard from "../components/todos.tsx";
 import { Flex } from "@chakra-ui/react";
 import SiderbarLeft from "../components/Sidebar";
-import TopDashboard from "./dashboard-content/TopDashboard.tsx";
-import ContentDashboard from "./dashboard-content/ContentDashboard.tsx";
-import DateDashboard from "./dashboard-content/DateDashboard.tsx";
+import ContentDashboard from "./dashboard-components/ContentDashboard.tsx";
+import DateDashboard from "./dashboard-components/DateDashboard.tsx";
+import Header from "../components/Header.tsx";
 
 export default function Dashboard() {
 
     return (
         <Flex display="flex" alignItems="flex-start">
-            <SiderbarLeft />
+            <SiderbarLeft active_page="Dashboard" />
 
             <Flex flexDirection={'column'}
                 gap='10'
@@ -19,7 +19,7 @@ export default function Dashboard() {
                 wrap={'wrap'}
             /* ml={'5%'} */
             >
-                <TopDashboard />
+                <Header title_page="Dashboard" />
 
                 <Flex flexDirection={'column'}>
 
