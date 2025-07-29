@@ -36,7 +36,7 @@ export default function TopAdmin() {
                             flexDirection={'column'}
                             gap={2}
                             ml={'auto'}
-
+                            justifyContent={'center'}
                         >
                             <Button
                                 gap={2}
@@ -44,7 +44,7 @@ export default function TopAdmin() {
                                 borderRadius={7}
                                 padding={3}
                             >
-                                <Text color={'gray'} fontSize={'small'}>
+                                <Text color={'gray'} fontSize={'small'} hideBelow={'md'}>
                                     Notices Reviewed:
                                 </Text>
                                 <Text fontWeight={'bold'}>

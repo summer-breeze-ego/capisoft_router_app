@@ -39,13 +39,18 @@ export default function NewNotis() {
                             >
                                 June 2025
                             </Box>
+
                         </Flex>
+
                     </Flex>
-                    <Box
-                        padding={'10'}
-                    >
-                        <NoticeAreaChart />
-                    </Box>
+
+                </Flex>
+                <Flex
+                    padding={'1'}
+                    textAlign={'right'}
+                    width={'60%'}
+                >
+                    <NoticeAreaChart />
                 </Flex>
             </Flex>
         </>

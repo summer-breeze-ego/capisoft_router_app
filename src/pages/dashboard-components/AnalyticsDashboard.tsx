@@ -1,5 +1,6 @@
 import { PureComponent } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, AreaChart, ResponsiveContainer, Area } from 'recharts';
+import { Box } from '@chakra-ui/react';
 
 const data = [
     {
@@ -80,17 +81,22 @@ export default class AnalyticsBarChart extends PureComponent {
 
     render() {
         return (
-            <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={data}>
-                    <CartesianGrid strokeDasharray="3 3" vertical={false} />
-                    <XAxis dataKey="name" />
-                    <YAxis yAxisId="left" orientation="left" stroke="gray" domain={[0, 6000]} tickCount={7} />
+            <Box width={'100%'} height={'100%'} overflowX={'auto'}>
+                <Box minWidth={'700px'} height={'100%'}>
+                    <ResponsiveContainer width="100%" height="100%">
+                        <BarChart data={data}>
+                            <CartesianGrid strokeDasharray="3 3" vertical={false} />
+                            <XAxis dataKey="name" tickSize={1} />
+                            <YAxis yAxisId="left" orientation="left" stroke="gray" domain={[0, 6000]} tickCount={7} />
 
-                    <Bar yAxisId={'left'} dataKey={'lr'} fill={'#D7F0FC'} />
-                    <Bar yAxisId={'left'} dataKey={'ns'} fill={'#CDEFD9'} />
-                    <Bar yAxisId={'left'} dataKey={'nj'} fill={'#FEA4A3'} />
-                </BarChart>
-            </ResponsiveContainer>
+                            <Bar yAxisId={'left'} dataKey={'lr'} fill={'#D7F0FC'} />
+                            <Bar yAxisId={'left'} dataKey={'ns'} fill={'#CDEFD9'} />
+                            <Bar yAxisId={'left'} dataKey={'nj'} fill={'#FEA4A3'} />
+                        </BarChart>
+                    </ResponsiveContainer>
+
+                </Box>
+            </Box>
         );
     }
 }
@@ -100,6 +106,7 @@ export class NoticeAreaChart extends PureComponent {
         return (
             <ResponsiveContainer width={"100%"} height={"100%"}>
                 <AreaChart data={data}>
+                    {console.log("notice chart")}
                     <Area type="monotone" dataKey="lr" stroke="#85BA49" fill="#E4F5D1" fillOpacity={0.3} />
                 </AreaChart>
             </ResponsiveContainer>

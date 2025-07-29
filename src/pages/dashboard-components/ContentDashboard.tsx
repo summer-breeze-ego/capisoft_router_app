@@ -12,8 +12,12 @@ import TopAdmin from "./TopAdminDashboard";
 export default function ContentDashboard() {
     return (
         <>
-            <Box w='100%' mt={'10px'}>
-                <SimpleGrid minChildWidth='300px' gap='5'>
+            <Box w='100%'>
+                <SimpleGrid
+                    minChildWidth={'20rem'}
+                    gap='5'
+                    columns={{ base: 1, md: 2, lg: 3 }}
+                >
                     <GridItem padding='20px' backgroundColor='white' borderRadius={'20px'} >
                         <NrTakedowns />
                     </GridItem>
@@ -23,13 +27,13 @@ export default function ContentDashboard() {
                     <GridItem padding='20px' backgroundColor='white' borderRadius={'20px'} >
                         <NewNotis />
                     </GridItem>
-                    <GridItem padding='20px' backgroundColor='white' borderRadius={'20px'} colSpan={2} h={'300px'} >
+                    <GridItem padding='20px' backgroundColor='white' borderRadius={'20px'} colSpan={{ base: 1, md: 2 }} h={'300px'} >
                         <Analytics />
                     </GridItem>
                     <GridItem padding='20px' backgroundColor='white' borderRadius={'20px'}>
                         <FakeSellers />
                     </GridItem>
-                    <GridItem padding='20px' backgroundColor='white' borderRadius={'10px'} colSpan={2}>
+                    <GridItem padding='20px' backgroundColor='white' borderRadius={'10px'} colSpan={{ base: 1, md: 2 }}>
                         <NotiTakeDowns />
                     </GridItem>
                     <GridItem padding='20px' backgroundColor='white' borderRadius={'10px'} >

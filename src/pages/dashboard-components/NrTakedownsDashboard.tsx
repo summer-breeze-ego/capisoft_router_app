@@ -21,35 +21,38 @@ export default function NrTakedowns() {
                 <Flex
                     flexDirection={'column'}
                 >
-                    <Flex
-                    >
-                        <Box
-                            fontSize={40}
-                            fontWeight={'bold'}
-                        >
-                            593568
-                        </Box>
+                    <Box>
                         <Flex
-                            color={'#42AA65'}
-                            bgColor={'#EBFDEF'}
-                            padding={2}
-                            borderRadius={'15px'}
-                            m={4}
-                            fontSize={12.5}
-                            gap={1}
                         >
-                            <Box mt={'1'}><FaArrowUp /></Box>
-                            <Box fontWeight={'bold'}>20.5%</Box>
+
+                            <Box
+                                fontSize={40}
+                                fontWeight={'bold'}
+                            >
+                                593568
+                            </Box>
+                            <Flex
+                                color={'#42AA65'}
+                                bgColor={'#EBFDEF'}
+                                padding={2}
+                                borderRadius={'15px'}
+                                m={4}
+                                fontSize={12.5}
+                                gap={1}
+                            >
+                                <Box mt={'1'}><FaArrowUp /></Box>
+                                <Box fontWeight={'bold'}>20.5%</Box>
+                            </Flex>
                         </Flex>
-                    </Flex>
-                    <Box
-                        color='gray'
-                        fontSize={12}
-                    >
-                        June 2025
+                        <Box
+                            color='gray'
+                            fontSize={12}
+                        >
+                            June 2025
+                        </Box>
                     </Box>
                 </Flex>
-            </Flex>
+            </Flex >
         </>
     )
 }

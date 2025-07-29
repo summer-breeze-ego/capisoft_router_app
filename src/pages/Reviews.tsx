@@ -1,4 +1,3 @@
-import products from '../data/Products'
 import SiderbarLeft from '../components/Sidebar'
 import Header from '../components/Header'
 import ContentReviews from './reviews-components/ContentReviews'

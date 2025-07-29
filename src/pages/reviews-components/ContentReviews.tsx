@@ -1,4 +1,4 @@
-import { Flex, SimpleGrid, Image, Box, Button, Stack } from "@chakra-ui/react";
+import { Flex, Box, Button } from "@chakra-ui/react";
 import purple_facecream from '../../assets/product_img/purple_facecare.png'
 import bodylotion from '../../assets/product_img/body_lotion.png'
 import dripdrip from '../../assets/product_img/dripdrip.png'
@@ -64,7 +64,7 @@ export const Products = [
 
 export default function ContentReviews() {
 
-    const gridview = false
+    const gridview = true
 
     return (
         <>

@@ -1,4 +1,4 @@
-import { Button, Text, Stack, Box } from "@chakra-ui/react"
+import { Button, Text, Stack, Box, Flex, useBreakpointValue } from "@chakra-ui/react"
 import { FaHouse } from "react-icons/fa6";
 import { MdOutlinePreview } from "react-icons/md";
 import { RiUserFill } from "react-icons/ri";
@@ -68,6 +68,12 @@ function SiderbarLeft({ active_page }: SiderbarLeftProps) {
         console.log("navigate to ", path)
     }
 
+    // change logo from full word to letter when screen is too small
+    const Logo = useBreakpointValue({
+        base: "A",
+        lg: "AUGUST",
+    })
+
     return (
         <Box
             position='fixed'
@@ -75,6 +81,8 @@ function SiderbarLeft({ active_page }: SiderbarLeftProps) {
             top='0'
             height='100%'
             backgroundColor='white'
+            zIndex={'999'}
+            width={{ base: "4rem", lg: '12rem' }}
         >
             <Stack
                 height='100%'
@@ -88,7 +96,7 @@ function SiderbarLeft({ active_page }: SiderbarLeftProps) {
                     fontWeight='extrabold'
                     marginBottom='1rem'
                 >
-                    AUGUST
+                    {Logo}
                 </Text>
 
                 {
@@ -106,8 +114,12 @@ function SiderbarLeft({ active_page }: SiderbarLeftProps) {
                             marginBottom='0.5rem'
                             onClick={() => handlePageChange(button.path)}
                         >
-                            {button.icon}
-                            {button.name}
+                            <Flex>
+                                {button.icon}
+                            </Flex>
+                            <Flex hideBelow='lg'>
+                                {button.name}
+                            </Flex>
                         </Button>
                     )
                 }
@@ -123,7 +135,9 @@ function SiderbarLeft({ active_page }: SiderbarLeftProps) {
                     onClick={handleSignOut}
                 >
                     <IoLogOut style={{ transform: "rotate(180deg)" }} />
-                    Logout
+                    <Flex hideBelow='lg'>
+                        Logout
+                    </Flex>
                 </Button>
 
             </Stack>

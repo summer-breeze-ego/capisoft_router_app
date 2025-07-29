@@ -8,24 +8,33 @@ type HeaderProps = {
 
 export default function Header({ title_page }: HeaderProps) {
     return (
-        <header>
-            {/* top row with page title search bad and username & profile pic */}
-            <Flex gap={'10'} >
-                <Flex textAlign='left' fontSize={'3xl'} fontWeight={'extrabold'} mt={'0'} mb={'auto'}>{title_page}</Flex>
-                <Flex gap={'6'} ml={'auto'} mr={'0'}>
-                    <InputGroup flex='1' endElement={<LuSearch size={20} />} minWidth={'450px'}>
-                        <Input placeholder="Search" borderColor={'rgba(0, 0, 0, 0)'} bgColor={'white'} />
-                    </InputGroup>
-                    <Button bg={'rgba(0, 0, 0, 0)'}>
-                        <Image src={pp} width={'35px'} />
-                        <VStack gap={'1px'}>
-                            <Text>John Smith</Text>
-                            <Text fontSize={'2xs'} color={'gray'} mr={'auto'}>Role</Text>
-                        </VStack>
+        < Flex
+            gap={'10'}
+            direction={{ base: 'column', sm: 'row' }}
+        >
+            <Flex textAlign='left' fontSize={'3xl'} fontWeight={'extrabold'} mt={'0'} mb={'auto'}>{title_page}</Flex>
+            <Flex gap={'6'} ml={{ sm: 'auto' }} mr={'0'}
+                direction={{ base: 'column', sm: 'row' }}
+            >
+                <InputGroup
+                    flex='1'
+                    endElement={<LuSearch size={20} />}
+                    minWidth={{ base: '50px', sm: '50px', md: '300px' }}
+                >
+                    <Input placeholder="Search" borderColor={'rgba(0, 0, 0, 0)'} bgColor={'white'} />
+                </InputGroup>
+                <Button bg={'rgba(0, 0, 0, 0)'}>
+                    <Image src={pp} width={'35px'} />
+                    <VStack
+                        gap={'1px'}
+                        hideBelow={'lg'}
+                    >
+                        <Text>John Smith</Text>
+                        <Text fontSize={'2xs'} color={'gray'} mr={'auto'}>Admin</Text>
+                    </VStack>
 
-                    </Button>
-                </Flex>
-            </Flex >
-        </header>
+                </Button>
+            </Flex>
+        </Flex >
     )
 }

@@ -1,5 +1,29 @@
 import { Box, Flex, Button, Stack, Separator } from "@chakra-ui/react"
 
+const ProductNoti = [
+    {
+        title: "Mademoiselle 3.4fl.oz 100 ml perfume, CHANEL",
+        link: "https://yourproducturlgoeshere1122.com",
+        timeago: "1 min ago",
+    },
+    {
+        title: "Cigarettes Crush balls Aroma, BLUE",
+        link: "https://yourproducturlgoeshere1122.com",
+        timeago: "2 min ago",
+    },
+    {
+        title: "Pokémon Enamel Pins Lot you can choose from",
+        link: "https://yourproducturlgoeshere1122.com",
+        timeago: "2 min ago",
+    },
+    {
+        title: "4 PCS Herb Tobacco Spice Grinder, COMBAT",
+        link: "https://yourproducturlgoeshere1122.com",
+        timeago: "2 min ago",
+    }
+]
+
+
 export default function NotiTakeDowns() {
     return (
         <>
@@ -21,88 +45,39 @@ export default function NotiTakeDowns() {
                     </Button>
                 </Flex>
                 <Stack gap={3} separator={<Separator variant={'dotted'} colorPalette={'#F2F2F2'} />}>
-                    <Flex gap={2}>
-                        <Flex
-                            fontSize={'small'}
-                            alignItems={'center'}
-                        >
-                            Mademoiselle 3.4fl.oz 100 ml perfume, CHANEL
-                        </Flex>
-                        <Flex
-                            fontSize={'xs'}
-                            alignItems={'center'}
-                            color={'gray'}
-                        >
-                            https://yourproducturlgoeshere1122.com
-                        </Flex>
-                        <Flex
-                            ml={'auto'}
-                        >
-                            1 min ago
-                        </Flex>
-                    </Flex>
-                    <Flex gap={2}>
-                        <Flex
-                            fontSize={'small'}
-                            alignItems={'center'}
-                        >
-                            Cigarettes Crush balls Aroma, BLUE
-                        </Flex>
-                        <Flex
-                            fontSize={'xs'}
-                            alignItems={'center'}
-                            color={'gray'}
-                        >
-                            https://yourproducturlgoeshere1122.com
-                        </Flex>
-                        <Flex
-                            ml={'auto'}
-                        >
-                            2 min ago
-                        </Flex>
-                    </Flex>
-                    <Flex gap={2}>
-                        <Flex
-                            fontSize={'small'}
-                            alignItems={'center'}
-                        >
-                            Pokémon Enamel Pins Lot you can choose from
-                        </Flex>
-                        <Flex
-                            fontSize={'xs'}
-                            alignItems={'center'}
-                            color={'gray'}
-                        >
-                            https://yourproducturlgoeshere1122.com
-                        </Flex>
-                        <Flex
-                            ml={'auto'}
-                        >
-                            2 min ago
-                        </Flex>
-                    </Flex>
-                    <Flex gap={2}>
-                        <Flex
-                            fontSize={'small'}
-                            alignItems={'center'}
-                        >
-                            4 PCS Herb Tobacco Spice Grinder, COMBAT
-                        </Flex>
-                        <Flex
-                            fontSize={'xs'}
-                            alignItems={'center'}
-                            color={'gray'}
-                        >
-                            https://yourproducturlgoeshere1122.com
-                        </Flex>
-                        <Flex
-                            ml={'auto'}
-                        >
-                            2 min ago
-                        </Flex>
-                    </Flex>
-                </Stack>
-            </Flex>
+                    {
+                        ProductNoti.map((noti) =>
+                            <Flex gap={2}>
+                                <Flex
+                                    gap={2}
+                                    direction={{ base: 'column', md: 'row' }}
+                                >
+                                    <Flex
+                                        fontSize={'small'}
+                                        alignItems={'center'}
+                                    >
+                                        {noti.title}
+                                    </Flex>
+                                    <Flex
+                                        fontSize={'xs'}
+                                        alignItems={'center'}
+                                        color={'gray'}
+                                    >
+                                        {noti.link}
+                                    </Flex>
+                                </Flex>
+                                <Flex
+                                    ml={'auto'}
+                                >
+                                    {noti.timeago}
+                                </Flex>
+                            </Flex>
+                        )
+                    }
+
+
+                </Stack >
+            </Flex >
         </>
     )
 }

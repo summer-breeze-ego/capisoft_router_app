@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useAuth } from "../context/AuthContext";
-import { Text, Input, Button, Flex } from "@chakra-ui/react";
+import { Input, Button, Flex } from "@chakra-ui/react";
 
 export default function Login() {
     const [email, setEmail] = useState('');
@@ -38,13 +38,13 @@ export default function Login() {
     }
 
     return (
-        <Flex flexDirection={'column'} align={'center'}>
-            <Text
-                fontSize='6xl'
+        <Flex flexDirection={'column'} align={'center'} mt={'25%'} >
+            <Flex
+                fontSize={{ base: '40px', sm: '40px', md: '80px' }}
                 fontWeight='extrabold'
             >
                 Login Page
-            </Text>
+            </Flex>
 
             <Flex flexDirection={'column'} gap={0}>
                 <Input
